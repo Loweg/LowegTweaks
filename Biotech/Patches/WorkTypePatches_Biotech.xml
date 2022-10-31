@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechEnabledWorkTypes/li["PlantCutting"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechWorkTypePriorities</xpath>
+		<value>
+			<mechWorkTypePriorities>
+				<Growing>2</Growing>
+			</mechWorkTypePriorities>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Mech_Fabricor"]/race/mechEnabledWorkTypes/li["Smithing"]</xpath>
+	</Operation>
+
+	<!-- Crafting -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="RepairMech"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsMechGestator"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsSubcoreEncoder"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+
+	<!-- Deliveries -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DeliverHemogenToPrisoner"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="BringBabyToSafety"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="CarryToBreastfeed"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<!-- Nursing -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="FeedHemogen"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+</Patch>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- WorkTypes -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkTypeDef[defName="Crafting"]/description</xpath>
+		<value>
+			<description>Create weapons, apparel, and other objects from raw materials, with methods both high- and low-tech.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/WorkTypeDef[defName="PlantCutting"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/PlantCutting</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/WorkTypeDef[defName="Smithing"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/Smithing</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li["Smithing"]</xpath>
+		<value>
+			<li>Crafting</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/WorkTypeDef[defName="Tailoring"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/Tailoring</xpath>
+	</Operation>
+
+	<!-- Crafting -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsBionicWorkbench"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsAdvancedMedicalStation"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsMakeWeapons"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsMachiningTable"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsFabricationBench"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsMakeApparel"]/workType</xpath>
+		<value>
+			<workType>Crafting</workType>
+		</value>
+	</Operation>
+
+	<!-- Laboring -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsRefinery"]/workType</xpath>
+		<value>
+			<workType>Labor</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsStonecut"]/workType</xpath>
+		<value>
+			<workType>Labor</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsSmelter"]/workType</xpath>
+		<value>
+			<workType>Labor</workType>
+		</value>
+	</Operation>
+
+	<!-- Nursing: Deliveries -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoctorRescue"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="TakeToBedToOperate"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="TakePrisonerToBed"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DeliverFoodToPrisoner"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<!-- Nursing -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoctorFeedHumanlikes"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="DoctorFeedAnimals"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="FeedPrisoner"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="HandlingFeedPatientAnimals"]/workType</xpath>
+		<value>
+			<workType>Nurse</workType>
+		</value>
+	</Operation>
+
+	<!-- Hauling -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="CookFillHopper"]/workType</xpath>
+		<value>
+			<workType>Hauling</workType>
+		</value>
+	</Operation>
+
+	<!-- Growing -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="PlantsCut"]/workType</xpath>
+		<value>
+			<workType>Growing</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="ExtractTree"]/workType</xpath>
+		<value>
+			<workType>Growing</workType>
+		</value>
+	</Operation>
+</Patch>

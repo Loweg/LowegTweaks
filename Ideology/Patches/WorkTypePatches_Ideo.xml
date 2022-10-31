@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- WorkTypes -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RitualBehaviorDef[defName="TreeConnection"]/roles/li[@Class="RitualRoleColonistConnectable"]/requiredWorkType</xpath>
+		<value>
+			<requiredWorkType>Growing</requiredWorkType>
+		</value>
+	</Operation>
+
+	<!-- Growing -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="PruneGauranlenTree"]/workType</xpath>
+		<value>
+			<workType>Growing</workType>
+		</value>
+	</Operation>
+</Patch>

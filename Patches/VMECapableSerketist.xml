@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Biomes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/PreceptDef[defName="VME_IdeoRole_InsectoidHerder"]/roleDisabledWorkTags</xpath>
+					<value>
+						<roleDisabledWorkTags>
+							<li>ManualDumb</li>
+							<li>Crafting</li>
+							<li>Constructing</li>
+							<li>Hunting</li>
+							<li>Artistic</li>
+							<li>Firefighting</li>
+						</roleDisabledWorkTags>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
