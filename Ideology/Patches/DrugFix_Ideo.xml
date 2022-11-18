@@ -3,7 +3,6 @@
 	<Operation Class="LowegTweaks.PatchOperationSettings">
 		<optionKey>drug_crafting</optionKey>
 		<operations>
-			<!-- High Life -->
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/PreceptDef[defName="DrugUse_Essential"]/statFactors</xpath>
 				<value>
