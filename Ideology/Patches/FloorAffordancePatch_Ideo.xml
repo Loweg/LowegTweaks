@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<!--
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/TerrainDef[@Name="IdeoCarpetBase"]</xpath>
-		<value>
-			<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/TerrainTemplateDef[@Name="IdeoCarpetTemplateBase"]</xpath>
-		<value>
-			<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		</value>
-	</Operation>
-	-->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/TerrainDef[defName="Boards_Totemic"]</xpath>
-		<value>
-			<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		</value>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>floor_affordance</optionKey>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TerrainDef[defName="Boards_Totemic"]</xpath>
+				<value>
+					<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 </Patch>

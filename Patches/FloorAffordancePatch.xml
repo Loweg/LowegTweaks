@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/TerrainDef[defName="StrawMatting"]</xpath>
-		<value>
-			<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		</value>
-	</Operation>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>floor_affordance</optionKey>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TerrainDef[defName="StrawMatting"]</xpath>
+				<value>
+					<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+				</value>
+			</li>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/TerrainDef[defName="WoodPlankFloor"]</xpath>
-		<value>
-			<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		</value>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TerrainDef[defName="WoodPlankFloor"]</xpath>
+				<value>
+					<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+				</value>
+			</li>
+		</operations>
 	</Operation>
-
-	<!--
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/TerrainTemplateDef[defName="Carpet"]</xpath>
-		<value>
-			<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		</value>
-	</Operation>
-	-->
 </Patch>

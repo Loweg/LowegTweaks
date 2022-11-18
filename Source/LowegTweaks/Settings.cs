@@ -4,27 +4,29 @@ using UnityEngine;
 
 namespace LowegTweaks {
 	public class Settings : ModSettings {
-		// To add a setting, need 4 things:
+		// To add a setting:
 		// 	add the variable here
 		// 	save it in ExposeData
 		// 	put another line in DoSettingsWindows
 		// 	add another language key
-		// -- Toggles --
+
 		// Vanilla
+		public bool temperature_overhaul = false;
+		public bool worktype_shuffle = false;
 		public bool drug_crafting = true;
 		public bool food_poisoning = true;
-		public bool temperature_overhaul = true;
-		public bool worktype_shuffle = false;
+		public bool floor_affordance = true;
 		// VE
 		public bool memes_capable_serketist = false;
 		// Alpha Biomes
 		public bool forsaken_dark_mood = false;
 
 		public override void ExposeData() {
-			Scribe_Values.Look(ref temperature_overhaul, "temperature_overhaul", true);
+			Scribe_Values.Look(ref temperature_overhaul, "temperature_overhaul", false);
+			Scribe_Values.Look(ref worktype_shuffle, "worktype_shuffle", false);
 			Scribe_Values.Look(ref drug_crafting, "drug_crafting", true);
 			Scribe_Values.Look(ref food_poisoning, "food_poisoning", true);
-			Scribe_Values.Look(ref worktype_shuffle, "worktype_shuffle", true);
+			Scribe_Values.Look(ref floor_affordance, "floor_affordance", true);
 
 			Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
 
@@ -49,11 +51,13 @@ namespace LowegTweaks {
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakTemperatureOverhaul", ref temperature_overhaul);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakWorkType", ref worktype_shuffle);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakDrugCrafting", ref drug_crafting);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakFoodPoisoning", ref food_poisoning);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
-				"LowegTweakWorkType", ref worktype_shuffle);
+				"LowegTweakFloorAffordance", ref floor_affordance);
 
 			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;
@@ -72,9 +76,6 @@ namespace LowegTweaks {
 		}
 		private static Vector2 scrollPosition = new Vector2(0f, 0f);
 		private static float totalContentHeight = 1000f;
-		private const float TopAreaHeight = 40f;
-		private const float TopButtonHeight = 35f;
-		private const float TopButtonWidth = 150f;
 		private const float ScrollBarWidthMargin = 18f;
 		private const float LabelHeight = 22f;
 
@@ -87,14 +88,13 @@ namespace LowegTweaks {
 			curY += LabelHeight + 1f;
 		}
 
-
 		/// <summary>
 		/// Grab a given setting given its string name
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
 		public static bool IsOptionSet(string name) {
-			var v = typeof(Settings).GetField(name, System.Reflection.BindingFlags.NonPublic |
+			var v = typeof(Settings).GetField(name, System.Reflection.BindingFlags.Public |
 				System.Reflection.BindingFlags.GetField | System.Reflection.BindingFlags.Instance);
 			if (v == null) {
 				Log.Error("LowegTweaks: option \"" + name + "\" is not a valid Settings variable. Failing.");

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<!-- High Life -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/PreceptDef[defName="DrugUse_Essential"]/statFactors</xpath>
-		<value>
-			<DrugCookingSpeed>1.5</DrugCookingSpeed>
-		</value>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>drug_crafting</optionKey>
+		<operations>
+			<!-- High Life -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PreceptDef[defName="DrugUse_Essential"]/statFactors</xpath>
+				<value>
+					<DrugCookingSpeed>1.5</DrugCookingSpeed>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 </Patch>

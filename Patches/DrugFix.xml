@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<!-- Smokeleaf -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="SmokeleafJoint"]/recipeMaker/workSpeedStat</xpath>
-		<value>
-			<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[@Name="MakeableDrugBase"]/recipeMaker/workSkill</xpath>
-		<value>
-			<workSkill>Crafting</workSkill>
-		</value>
-	</Operation>
-	<!-- Stats -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/StatDef[defName="DrugSynthesisSpeed"]/skillNeedFactors/li[@Class="SkillNeed_BaseBonus"]/skill</xpath>
-		<value>
-			<skill>Crafting</skill>
-		</value>
-	</Operation>
-	<!-- Descriptions -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/StatDef[defName="DrugCookingSpeed"]/description</xpath>
-		<value>
-			<description>The speed at which this person cooks drug products at a stove, such as beer and tea.</description>
-		</value>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>drug_crafting</optionKey>
+		<operations>
+			<!-- Smokeleaf -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="SmokeleafJoint"]/recipeMaker/workSpeedStat</xpath>
+				<value>
+					<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="MakeableDrugBase"]/recipeMaker/workSkill</xpath>
+				<value>
+					<workSkill>Crafting</workSkill>
+				</value>
+			</li>
+			<!-- Stats -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="DrugSynthesisSpeed"]/skillNeedFactors/li[@Class="SkillNeed_BaseBonus"]/skill</xpath>
+				<value>
+					<skill>Crafting</skill>
+				</value>
+			</li>
+			<!-- Descriptions -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="DrugCookingSpeed"]/description</xpath>
+				<value>
+					<description>The speed at which this person cooks drug products at a stove, such as beer and tea.</description>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 </Patch>

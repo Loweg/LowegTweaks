@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>forsaken_dark_mood</optionKey>
+		<operations>
+			<li Class="PatchOperationAdd" MayRequire="sarg.alphabiomes">
+				<xpath>/Defs/ThoughtDef[defName="AB_ForsakenNight"]</xpath>
+				<value>
+					<nullifyingGenes>
+						<li MayRequire="Ludeon.RimWorld.Biotech">DarkVision</li>
+					</nullifyingGenes>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
