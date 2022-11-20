@@ -1,7 +1,7 @@
 ﻿using System;
 using Verse;
 
-namespace TemperatureOverhaul {
+namespace LowegTweaks.TemperatureOverhaul {
 	public enum OverallStability {
 		VeryExtreme,
 		Extreme,

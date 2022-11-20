@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	<!-- Language data for the Mod Settings (see Settings.cs) -->
+	<PlanetStability>Temperature stability</PlanetStability>
+	<PlanetStability_Low>Extreme</PlanetStability_Low>
+	<PlanetStability_Normal>Normal</PlanetStability_Normal>
+	<PlanetStability_High>Stable</PlanetStability_High>
+
+	<!-- Settings.cs -->
 	<LowegSettingsRestartWarning>IMPORTANT REMINDER: you MUST restart the game for changes to take effect</LowegSettingsRestartWarning>
 	<!-- Vanilla -->
 	<LowegTweakTemperatureOverhaul>Temperature overhaul</LowegTweakTemperatureOverhaul>
@@ -13,7 +18,7 @@
 	<LowegTweakWorkTypeDesc>Moves around work types within the work catagories so that your doctors are no longer overloaded with having to feed all of your patients. Also combines growing and plant cutting for extra space. See readme for more.</LowegTweakWorkTypeDesc>
 	<LowegTweakFloorAffordance>Floor affordance tweaks</LowegTweakFloorAffordance>
 	<LowegTweakFloorAffordanceDesc>Changes some floor affordances so that they don't all require heavy terrain (for example, carpets and straw).</LowegTweakFloorAffordanceDesc>
-	<!-- Mod -->
+	<!-- Mod Support -->
 	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>
 	<LowegTweakCapableSerketistDesc>Makes the Serketist role in Vanilla Memes Expanded capable of more labors.</LowegTweakCapableSerketistDesc>
 	<LowegTweakForsakenDarkMood>Forsaken dark mood</LowegTweakForsakenDarkMood>

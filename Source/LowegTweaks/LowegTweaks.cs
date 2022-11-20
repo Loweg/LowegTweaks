@@ -1,6 +1,4 @@
-﻿using HarmonyLib;
-using RimWorld;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
 namespace LowegTweaks {
