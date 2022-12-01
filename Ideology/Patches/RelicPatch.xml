@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[@Name="ApparelMakeableBase"]</xpath>
-		<value>
-			<relicChance>1</relicChance>
-		</value>
-	</Operation>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>relic_diversification</optionKey>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="ApparelMakeableBase"]</xpath>
+				<value>
+					<relicChance>1</relicChance>
+				</value>
+			</li>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[@Name="ArmorSmithableBase"]</xpath>
-		<value>
-			<relicChance>1</relicChance>
-		</value>
-	</Operation>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="ArmorSmithableBase"]</xpath>
+				<value>
+					<relicChance>1</relicChance>
+				</value>
+			</li>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[@Name="ArmorMachineableBase"]</xpath>
-		<value>
-			<relicChance>1</relicChance>
-		</value>
-	</Operation>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="ArmorMachineableBase"]</xpath>
+				<value>
+					<relicChance>1</relicChance>
+				</value>
+			</li>
 
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Royalty</li>
-		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationAdd">
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Royalty</li>
+				</mods>
+				<match Class="PatchOperationAdd">
 					<xpath>/Defs/ThingDef[@Name="PsychicApparelBase"]</xpath>
 					<value>
 						<relicChance>1</relicChance>
 					</value>
-				</li>
-			</operations>
-		</match>
+				</match>
+			</li>
+		</operations>
 	</Operation>
 </Patch>

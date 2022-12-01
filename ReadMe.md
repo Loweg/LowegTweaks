@@ -36,7 +36,7 @@ Default on.
 ### Relic Diversification
 Makes it so that apparel and some other things can spawn as relics.
 
-No setting yet.
+Default on.
 ## Alpha Biomes
 ### Forsaken mood
 The forsaken crags biome gives a negative mood debuff to colonists due to the sun being blotted out. This currently negates that if they have the biotech gene for dark vision.

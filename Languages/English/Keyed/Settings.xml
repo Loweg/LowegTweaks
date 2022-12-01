@@ -6,7 +6,7 @@
 	<PlanetStability_High>Stable</PlanetStability_High>
 
 	<!-- Settings.cs -->
-	<LowegSettingsRestartWarning>IMPORTANT REMINDER: you MUST restart the game for changes to take effect</LowegSettingsRestartWarning>
+	<LowegSettingsRestartWarning>IMPORTANT REMINDER: You MUST restart the game for changes to take effect</LowegSettingsRestartWarning>
 	<!-- Vanilla -->
 	<LowegTweakTemperatureOverhaul>Temperature overhaul</LowegTweakTemperatureOverhaul>
 	<LowegTweakTemperatureOverhaulDesc>Replaces many game constants with dynamic values, such as how much the temperature varies between day and night. Also adds a new "Overall Temperature" slider on the world creation screen.</LowegTweakTemperatureOverhaulDesc>
@@ -18,6 +18,8 @@
 	<LowegTweakWorkTypeDesc>Moves around work types within the work catagories so that your doctors are no longer overloaded with having to feed all of your patients. Also combines growing and plant cutting for extra space. See readme for more.</LowegTweakWorkTypeDesc>
 	<LowegTweakFloorAffordance>Floor affordance tweaks</LowegTweakFloorAffordance>
 	<LowegTweakFloorAffordanceDesc>Changes some floor affordances so that they don't all require heavy terrain (for example, carpets and straw).</LowegTweakFloorAffordanceDesc>
+	<LowegTweakRelicDiversification>Relic Diversification</LowegTweakRelicDiversification>
+	<LowegTweakRelicDiversificationDesc>Makes it so that apparel and some other things can spawn as relics.</LowegTweakRelicDiversificationDesc>
 	<!-- Mod Support -->
 	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>
 	<LowegTweakCapableSerketistDesc>Makes the Serketist role in Vanilla Memes Expanded capable of more labors.</LowegTweakCapableSerketistDesc>

@@ -5,7 +5,7 @@
 		<operations>
 			<!-- WorkTypes -->
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/</xpath>
+				<xpath>/Defs</xpath>
 				<value>
 					<WorkTypeDef>
 						<defName>Nurse</defName>
