@@ -10,7 +10,6 @@ namespace LowegTweaks {
 			Log.Message("Applying Tweak settings");
 			var settings = LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>();
 			Log.Message($"Settings: {settings}");
-
 		}
 
 		public override string SettingsCategory() => "Loweg's Tweaks";
@@ -19,6 +18,7 @@ namespace LowegTweaks {
 			GetSettings<Settings>().DoSettingsWindowContents(inRect);
 		}
 	}
+
 	public class PatchOperationSettings : PatchOperationSequence {
 		private string optionKey = "";
 		protected override bool ApplyWorker(System.Xml.XmlDocument xml) {

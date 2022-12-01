@@ -39,22 +39,22 @@ namespace LowegTweaks.TemperatureOverhaul {
 			{new CurvePoint(1f,   -37f), true},
 		};
 		private static readonly SimpleCurve Latitude_LittleBitStable = new SimpleCurve() {
-			{new CurvePoint(0.0f, 27f),  true},
-			{new CurvePoint(0.1f, 26f),  true},
-			{new CurvePoint(0.5f, 7f),   true},
-			{new CurvePoint(1f,   -33f), true},
+			{new CurvePoint(0.0f, 30f),  true},
+			{new CurvePoint(0.1f, 29f),  true},
+			{new CurvePoint(0.5f, 13f),   true},
+			{new CurvePoint(1f,   -30f), true},
 		};
 		private static readonly SimpleCurve Latitude_Stable = new SimpleCurve() {
-			{new CurvePoint(0.0f, 21f),  true},
-			{new CurvePoint(0.1f, 20f),  true},
-			{new CurvePoint(0.5f, 7f),   true},
+			{new CurvePoint(0.0f, 30f),  true},
+			{new CurvePoint(0.1f, 29f),  true},
+			{new CurvePoint(0.5f, 15f),   true},
 			{new CurvePoint(1f,   -26f), true},
 		};
 		private static readonly SimpleCurve Latitude_VeryStable = new SimpleCurve() {
-			{new CurvePoint(0.0f, 12f),  true},
-			{new CurvePoint(0.1f, 11f),  true},
-			{new CurvePoint(0.5f, 7f),   true},
-			{new CurvePoint(1f,   -15f), true},
+			{new CurvePoint(0.0f, 30f),  true},
+			{new CurvePoint(0.1f, 28f),  true},
+			{new CurvePoint(0.5f, 17f),   true},
+			{new CurvePoint(1f,   -19f), true},
 		};
 
 		// Season
@@ -95,7 +95,7 @@ namespace LowegTweaks.TemperatureOverhaul {
 		};
 
 		public static readonly SimpleCurve RainfallStabilityEffect = new SimpleCurve() {
-			{new CurvePoint(5000f, 0.01f), true},
+			{new CurvePoint(7000f, 0.01f), true},
 			{new CurvePoint(2000f, 0.5f),  true},
 			{new CurvePoint(1300f, 0.9f),  true},
 			{new CurvePoint(800f,  1.1f),  true},

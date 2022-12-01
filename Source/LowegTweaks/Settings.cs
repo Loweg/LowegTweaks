@@ -16,6 +16,7 @@ namespace LowegTweaks {
 		public bool drug_crafting = true;
 		public bool food_poisoning = true;
 		public bool floor_affordance = true;
+		public bool relic_diversification = true;
 		// VE
 		public bool memes_capable_serketist = false;
 		// Alpha Biomes
@@ -27,6 +28,7 @@ namespace LowegTweaks {
 			Scribe_Values.Look(ref drug_crafting, "drug_crafting", true);
 			Scribe_Values.Look(ref food_poisoning, "food_poisoning", true);
 			Scribe_Values.Look(ref floor_affordance, "floor_affordance", true);
+			Scribe_Values.Look(ref relic_diversification, "relic_diversification", true);
 
 			Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
 
@@ -58,6 +60,8 @@ namespace LowegTweaks {
 				"LowegTweakFoodPoisoning", ref food_poisoning);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakFloorAffordance", ref floor_affordance);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakRelicDiversification", ref relic_diversification);
 
 			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;
@@ -91,8 +95,6 @@ namespace LowegTweaks {
 		/// <summary>
 		/// Grab a given setting given its string name
 		/// </summary>
-		/// <param name="name"></param>
-		/// <returns></returns>
 		public static bool IsOptionSet(string name) {
 			var v = typeof(Settings).GetField(name, System.Reflection.BindingFlags.Public |
 				System.Reflection.BindingFlags.GetField | System.Reflection.BindingFlags.Instance);

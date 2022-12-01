@@ -4,9 +4,6 @@ using Verse;
 
 namespace LowegTweaks.TemperatureOverhaul {
 	class WorldParamHelper {
-		public static void GenerateWorldStability() {
-			Current.Game.GetComponent<StabilityInfo>().FinalizeInit();
-		}
 		public static void SetStability(float value) {
 			var stability = Mathf.RoundToInt(value);
 			Current.Game.GetComponent<StabilityInfo>().overallStability = (OverallStability)stability;
