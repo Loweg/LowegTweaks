@@ -40,29 +40,11 @@
 				</value>
 			</li>
 
+			<!-- Crafting -->
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkTypeDef[defName="Crafting"]/description</xpath>
 				<value>
 					<description>Create weapons, apparel, and other objects from raw materials, with methods both high- and low-tech.</description>
-				</value>
-			</li>
-
-			<li Class="PatchOperationRemove">
-				<xpath>Defs/WorkTypeDef[defName="PlantCutting"]</xpath>
-			</li>
-			<li Class="PatchOperationRemove">
-				<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/PlantCutting</xpath>
-			</li>
-
-			<li Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechEnabledWorkTypes/li["PlantCutting"]</xpath>
-			</li>
-			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechWorkTypePriorities</xpath>
-				<value>
-					<mechWorkTypePriorities>
-						<Growing>2</Growing>
-					</mechWorkTypePriorities>
 				</value>
 			</li>
 
@@ -75,9 +57,9 @@
 			<li Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
 				<xpath>/Defs/ThingDef[defName="Mech_Fabricor"]/race/mechEnabledWorkTypes/li["Smithing"]</xpath>
 			</li>
-
 			<li Class="PatchOperationReplace">
-				<xpath>/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li["Smithing"]</xpath>
+				<xpath>
+					/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li["Smithing"]</xpath>
 				<value>
 					<li>Crafting</li>
 				</value>
@@ -88,22 +70,6 @@
 			</li>
 			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/Tailoring</xpath>
-			</li>
-
-			<!-- Crafting -->
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName="DoBillsBionicWorkbench"]/workType</xpath>
-				<value>
-					<workType>Crafting</workType>
-				</value>
-				<success>Always</success>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName="DoBillsAdvancedMedicalStation"]/workType</xpath>
-				<value>
-					<workType>Crafting</workType>
-				</value>
-				<success>Always</success>
 			</li>
 
 			<li Class="PatchOperationReplace">
@@ -130,20 +96,6 @@
 					<workType>Crafting</workType>
 				</value>
 			</li>
-
-			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
-				<xpath>/Defs/RitualBehaviorDef[defName="TreeConnection"]/roles/li[@Class="RitualRoleColonistConnectable"]/requiredWorkType</xpath>
-				<value>
-					<requiredWorkType>Growing</requiredWorkType>
-				</value>
-			</li>
-			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
-				<xpath>/Defs/WorkGiverDef[defName="PruneGauranlenTree"]/workType</xpath>
-				<value>
-					<workType>Growing</workType>
-				</value>
-			</li>
-
 			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
 				<xpath>/Defs/WorkGiverDef[defName="RepairMech"]/workType</xpath>
 				<value>
@@ -160,6 +112,55 @@
 				<xpath>/Defs/WorkGiverDef[defName="DoBillsSubcoreEncoder"]/workType</xpath>
 				<value>
 					<workType>Crafting</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+				<xpath>/Defs/WorkGiverDef[defName="DoBillsBioferriteShaper"]/workType</xpath>
+				<value>
+					<workType>Crafting</workType>
+				</value>
+			</li>
+
+			<!-- Plant Cutting -->
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/WorkTypeDef[defName="PlantCutting"]</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/PlantCutting</xpath>
+			</li>
+			<li Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechEnabledWorkTypes/li["PlantCutting"]</xpath>
+			</li>
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<mechWorkTypePriorities>
+						<Growing>2</Growing>
+					</mechWorkTypePriorities>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
+				<xpath>/Defs/RitualBehaviorDef[defName="TreeConnection"]/roles/li[@Class="RitualRoleColonistConnectable"]/requiredWorkType</xpath>
+				<value>
+					<requiredWorkType>Growing</requiredWorkType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
+				<xpath>/Defs/WorkGiverDef[defName="PruneGauranlenTree"]/workType</xpath>
+				<value>
+					<workType>Growing</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName="PlantsCut"]/workType</xpath>
+				<value>
+					<workType>Growing</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName="ExtractTree"]/workType</xpath>
+				<value>
+					<workType>Growing</workType>
 				</value>
 			</li>
 
@@ -273,21 +274,6 @@
 				</value>
 			</li>
 
-			<!-- Growing -->
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName="PlantsCut"]/workType</xpath>
-				<value>
-					<workType>Growing</workType>
-				</value>
-			</li>
-
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName="ExtractTree"]/workType</xpath>
-				<value>
-					<workType>Growing</workType>
-				</value>
-			</li>
-
 			<!-- CE -->
 			<li Class="PatchOperationReplace" MayRequire="CETeam.CombatExtended">
 				<xpath>/Defs/WorkGiverDef[defName="DoBillsAmmoBench"]/workType</xpath>
@@ -338,6 +324,30 @@
 			<!-- Rimatomics -->
 			<li Class="PatchOperationReplace" MayRequire="Dubwise.Rimatomics">
 				<xpath>/Defs/WorkGiverDef[defName="DoBillsTableNuclear"]/workType</xpath>
+				<value>
+					<workType>Crafting</workType>
+				</value>
+			</li>
+
+			<!-- RBSE; success always rather than MayRequire because of regular and hardcore mod versions -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName="DoBillsBionicWorkbench"]/workType</xpath>
+				<value>
+					<workType>Crafting</workType>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName="DoBillsAdvancedMedicalStation"]/workType</xpath>
+				<value>
+					<workType>Crafting</workType>
+				</value>
+				<success>Always</success>
+			</li>
+
+			<!-- Vanilla Vehicles -->
+			<li Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaVehiclesExpanded">
+				<xpath>/Defs/WorkGiverDef[defName="VVE_DoBillsGarageBench"]/workType</xpath>
 				<value>
 					<workType>Crafting</workType>
 				</value>

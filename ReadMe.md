@@ -6,7 +6,7 @@ Adds a new world creation parameter "Overall Stability" that determines the temp
 
 Changes the day/night temperature variation from a constant 7 degrees C to a variable based on the amount of rainfall on the map tile.
 
-Default off.
+Default on.
 ### Work type shuffle
 Shuffles around work types.
 
@@ -16,9 +16,9 @@ The tweak also combines the two small categories of growing and plant cutting in
 
 Finally, crafting tasks are also shuffled around. The difference between crafting, tailoring, and smithing is not always helpful or clear. This tweak moves all labors that use the crafting skill into crafting, and unskilled labors into a new category called "laboring".
 
-Has patches for Dubs Bad Hygiene and Rimatomics, RBSE, and CE. Has been tested with Vanilla Expanded and the Alpha series. Other mods that add smithing, tailoring, or plant cutting *work types* might break horribly.
+Has patches for Dubs Bad Hygiene and Rimatomics, RBSE, Vanilla Vehicles Expanded, and CE. Has been tested with Vanilla Expanded and the Alpha series. Other mods that add smithing, tailoring, or plant cutting *work types* (usually this means a new crafting bench) might break horribly.
 
-Default off.
+Default off, but I highly recommend it if it doesn't conflict with anything else you have.
 ### Drug Fix
 Fixes the drug crafting identity crisis.
 

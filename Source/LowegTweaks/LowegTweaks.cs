@@ -7,9 +7,7 @@ namespace LowegTweaks {
 		public LowegTweaks(ModContentPack content) : base(content) {}
 
 		public static void ApplySettings() {
-			Log.Message("Applying Tweak settings");
 			var settings = LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>();
-			Log.Message($"Settings: {settings}");
 		}
 
 		public override string SettingsCategory() => "Loweg's Tweaks";

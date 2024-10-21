@@ -24,7 +24,6 @@ namespace LowegTweaks {
 		}
 
 		static HarmonyBase() {
-			Harmony.DEBUG = true;
 			if (LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().temperature_overhaul) {
 				new StabilityInfo().FinalizeInit();
 			}
@@ -46,6 +45,7 @@ namespace LowegTweaks {
 		// Work types
 		[HarmonyPatch(typeof(Alert_ConnectedPawnNotAssignedToPlantCutting), "GetTargets")]
 		class AlertPlantCuttingPatch {
+			// Simple replacement of vanilla with growing instead of plantcutting
 			[HarmonyPrefix]
 			public static bool Prefix(Alert_ConnectedPawnNotAssignedToPlantCutting __instance) {
 				List<GlobalTargetInfo> targets = new List<GlobalTargetInfo>();

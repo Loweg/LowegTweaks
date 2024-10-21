@@ -11,7 +11,7 @@ namespace LowegTweaks {
 		// 	add another language key
 
 		// Vanilla
-		public bool temperature_overhaul = false;
+		public bool temperature_overhaul = true;
 		public bool worktype_shuffle = false;
 		public bool drug_crafting = true;
 		public bool food_poisoning = true;
@@ -23,7 +23,7 @@ namespace LowegTweaks {
 		public bool forsaken_dark_mood = false;
 
 		public override void ExposeData() {
-			Scribe_Values.Look(ref temperature_overhaul, "temperature_overhaul", false);
+			Scribe_Values.Look(ref temperature_overhaul, "temperature_overhaul", true);
 			Scribe_Values.Look(ref worktype_shuffle, "worktype_shuffle", false);
 			Scribe_Values.Look(ref drug_crafting, "drug_crafting", true);
 			Scribe_Values.Look(ref food_poisoning, "food_poisoning", true);
@@ -37,7 +37,7 @@ namespace LowegTweaks {
 
 		public void DoSettingsWindowContents(Rect inRect) {
 			Rect rectWeCanSee = inRect.ContractedBy(10f);
-			rectWeCanSee.height -= 100f; // "close" button
+            rectWeCanSee.height -= 100f; // "close" button
 			bool scrollBarVisible = totalContentHeight > rectWeCanSee.height;
 			Rect rectThatHasEverything = new Rect(0f, 0f, rectWeCanSee.width - (scrollBarVisible ? ScrollBarWidthMargin : 0), totalContentHeight);
 			Widgets.BeginScrollView(rectWeCanSee, ref scrollPosition, rectThatHasEverything);
