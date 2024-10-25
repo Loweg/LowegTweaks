@@ -23,6 +23,8 @@
 	<!-- Mod Support -->
 	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>
 	<LowegTweakCapableSerketistDesc>Makes the Serketist role in Vanilla Memes Expanded capable of more labors.</LowegTweakCapableSerketistDesc>
+	<LowegTweakTribalResearch>Tribals Research Patches</LowegTweakTribalResearch>
+	<LowegTweakTribalResearchDesc>Adds mod compatibility and patches to require Vanilla Factions Expanded - Tribals researches for some modded buildings and recipes, and fixes the smooth stone designation bug. Patches Cooking and Agriculture, CE, Colony Manager, Deep Storage, Rimefeller, and Dubs Bad Hygiene.</LowegTweakTribalResearchDesc>
 	<LowegTweakForsakenDarkMood>Forsaken dark mood</LowegTweakForsakenDarkMood>
 	<LowegTweakForsakenDarkMoodDesc>Makes the special mood debuff for the Forsaken Crags in Alpha Biomes take into account blindness and opinions on darkness.</LowegTweakForsakenDarkMoodDesc>
 </LanguageData>

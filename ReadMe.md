@@ -48,3 +48,8 @@ Default off. Do not turn on unless you have Alpha Biomes loaded.
 Increases the amount of permitted labors for the VME Serketist.
 
 Default off. Do not turn on unless you have Vanilla Ideology Expanded - Memes and Structures loaded.
+
+### Tribals Research Patch
+Adds mod compatibility and patches to require Vanilla Factions Expanded = Tribals researches for some modded buildings and recipes, and fixes the smooth stone designation bug. Patches Cooking and Agriculture, CE, Colony Manager, Deep Storage, Rimefeller, and Dubs Bad Hygiene
+
+Default off.

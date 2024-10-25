@@ -19,6 +19,7 @@ namespace LowegTweaks {
 		public bool relic_diversification = true;
 		// VE
 		public bool memes_capable_serketist = false;
+		public bool factions_tribal_research = false;
 		// Alpha Biomes
 		public bool forsaken_dark_mood = false;
 
@@ -31,13 +32,14 @@ namespace LowegTweaks {
 			Scribe_Values.Look(ref relic_diversification, "relic_diversification", true);
 
 			Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
+			Scribe_Values.Look(ref factions_tribal_research, "factions_tribal_research", false);
 
 			Scribe_Values.Look(ref forsaken_dark_mood, "forsaken_dark_mood", false);
 		}
 
 		public void DoSettingsWindowContents(Rect inRect) {
 			Rect rectWeCanSee = inRect.ContractedBy(10f);
-            rectWeCanSee.height -= 100f; // "close" button
+			rectWeCanSee.height -= 100f; // "close" button
 			bool scrollBarVisible = totalContentHeight > rectWeCanSee.height;
 			Rect rectThatHasEverything = new Rect(0f, 0f, rectWeCanSee.width - (scrollBarVisible ? ScrollBarWidthMargin : 0), totalContentHeight);
 			Widgets.BeginScrollView(rectWeCanSee, ref scrollPosition, rectThatHasEverything);
@@ -68,6 +70,8 @@ namespace LowegTweaks {
 
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakCapableSerketist", ref memes_capable_serketist);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakTribalResearch", ref factions_tribal_research);
 
 			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;

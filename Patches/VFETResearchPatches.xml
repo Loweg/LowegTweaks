@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>factions_tribal_research</optionKey>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Factions Expanded - Tribals</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationAdd">
+							<xpath>/Defs/VFETribals.TribalResearchProjectDef[defName = "VFET_Mining"]/unlocksDesignators</xpath>
+							<value>
+								<li>Designator_SmoothWalls</li>
+								<li>Designator_SmoothFloors</li>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="ceteam.combatextended">
+							<xpath>/Defs/ThingDef[defName="CE_Embrasure"]</xpath>
+							<value>
+								<researchPrerequisites><li>VFET_Construction</li></researchPrerequisites>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd" MayRequire="ceteam.combatextended">
+							<xpath>/Defs/ThingDef[defName="CE_Apparel_TribalBackpack" or defName="CE_Apparel_ImprovGasMask"]/recipeMaker</xpath>
+							<value>
+								<researchPrerequisite>VFET_Tribalwear</researchPrerequisite>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd" MayRequire="ceteam.combatextended">
+							<xpath>/Defs/RecipeDef[@Name="AmmoRecipeNeolithicBase"]</xpath>
+							<value>
+								<researchPrerequisite>VFET_Bow</researchPrerequisite>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd" MayRequire="ceteam.combatextended">
+							<xpath>/Defs/RecipeDef[defName="MakeStickBomb" or defName="MakeMolotovCocktail"]</xpath>
+							<value>
+								<researchPrerequisite>VFET_Culture</researchPrerequisite>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="heaven.colonymanagerfork">
+							<xpath>/Defs/ThingDef[defName="FM_BasicManagerStation"]</xpath>
+							<value>
+								<researchPrerequisites><li>VFET_Culture</li></researchPrerequisites>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="lwm.deepstorage">
+							<xpath>/Defs/ThingDef[defName="LWM_Food_Basket"]/researchPrerequisites</xpath>
+							<value>
+								<li>VFET_Construction</li>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="alias.doormats">
+							<xpath>/Defs/ThingDef[@Name="DoorMatBase"]</xpath>
+							<value>
+								<researchPrerequisites><li>VFET_Culture</li></researchPrerequisites>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="dubwise.rimefeller">
+							<xpath>/Defs/TerrainDef[defName="Wood_ParquetHerring" or defName="Wood_ParquetVersailles"]</xpath>
+							<value>
+								<researchPrerequisites><li>VFET_Construction</li></researchPrerequisites>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="Owlchemist.SimpleChains.Lumber">
+							<xpath>/Defs/TerrainDef[defName="Owl_WoodDryingRack" or defName="Owl_CarpentersTrestle"]</xpath>
+							<value>
+								<researchPrerequisites><li>VFET_Construction</li></researchPrerequisites>
+							</value>
+						</li>
+
+						<li Class="PatchOperationAdd" MayRequire="Owlchemist.SimpleChains.Leather">
+							<xpath>/Defs/TerrainDef[defName="Owl_TanningVat"]</xpath>
+							<value>
+								<researchPrerequisites>
+									<li>VFET_Construction</li>
+									<li>VFET_Hunting</li>
+								</researchPrerequisites>
+							</value>
+						</li>
+
+						<li Class="PatchOperationFindMod">
+							<mods>
+								<li>Dubs Bad Hygiene</li>
+							</mods>
+							<match Class="PatchOperationSequence">
+								<operations>
+									<li Class="PatchOperationAdd">
+										<xpath>/Defs</xpath>
+										<value>
+											<ResearchProjectDef>
+												<defName>Sanitation</defName>
+												<label>sanitation</label>
+												<description>Build pit latrines, wells, and other buildings for basic water and waste management.</description>
+												<baseCost>300</baseCost>
+												<techLevel>Neolithic</techLevel>
+												<researchViewX>0.00</researchViewX>
+												<researchViewY>3.50</researchViewY>
+												<generalRules>
+													<rulesStrings>
+														<li>subject->plumbing</li>
+														<li>subject_story->rid the streets of sewage on a dense urbworld</li>
+														<li>subject_story->discovered the source of a deadly disease</li>
+														<li>subject_story->became obsessed with cleanliness</li>
+														<li>subject_gerund->taking a dump</li>
+														<li>subject_gerund->quenching their thirst</li>
+													</rulesStrings>
+												</generalRules>
+											</ResearchProjectDef>
+										</value>
+									</li>
+									<li Class="PatchOperationAdd">
+										<xpath>/Defs/ThingDef[@Name="BasedHygieneMom"]</xpath>
+										<value>
+											<researchPrerequisites><li>VFET_Construction</li></researchPrerequisites>
+										</value>
+									</li>
+								</operations>
+							</match>
+						</li>
+					</operations>
+				</match>
+			</li>
+			</operations>
+	</Operation>
+</Patch>
