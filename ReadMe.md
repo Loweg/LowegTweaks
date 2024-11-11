@@ -28,6 +28,8 @@ Default on.
 ### Food poison rebalance
 Makes it so that expert cooks will no longer poison your colonists due to "insufficient skill". They can still make tainted meals due to a dirty cooking area.
 
+Also removes the food poison chance from insect jelly.
+
 Default on.
 ### Floor affordances
 Changes required floor affordances so that not all floors are heavy. Finally you can strew some straw around on sand or whatever. Makes straw light and wood medium. TODO: make carpets light.

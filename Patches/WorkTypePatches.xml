@@ -55,11 +55,11 @@
 				<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/Smithing</xpath>
 			</li>
 			<li Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-				<xpath>/Defs/ThingDef[defName="Mech_Fabricor"]/race/mechEnabledWorkTypes/li["Smithing"]</xpath>
+				<xpath>/Defs/ThingDef[defName="Mech_Fabricor"]/race/mechEnabledWorkTypes/li[text()="Smithing"]</xpath>
 			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>
-					/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li["Smithing"]</xpath>
+					/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li[text()="Smithing"]</xpath>
 				<value>
 					<li>Crafting</li>
 				</value>
@@ -129,7 +129,7 @@
 				<xpath>/Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/PlantCutting</xpath>
 			</li>
 			<li Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechEnabledWorkTypes/li["PlantCutting"]</xpath>
+				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechEnabledWorkTypes/li[text()="PlantCutting"]</xpath>
 			</li>
 			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
 				<xpath>/Defs/ThingDef[defName="Mech_Agrihand"]/race/mechWorkTypePriorities</xpath>

@@ -71,14 +71,14 @@
 						</li>
 
 						<li Class="PatchOperationAdd" MayRequire="Owlchemist.SimpleChains.Lumber">
-							<xpath>/Defs/TerrainDef[defName="Owl_WoodDryingRack" or defName="Owl_CarpentersTrestle"]</xpath>
+							<xpath>/Defs/ThingDef[defName="Owl_WoodDryingRack" or defName="Owl_CarpentersTrestle"]</xpath>
 							<value>
 								<researchPrerequisites><li>VFET_Construction</li></researchPrerequisites>
 							</value>
 						</li>
 
 						<li Class="PatchOperationAdd" MayRequire="Owlchemist.SimpleChains.Leather">
-							<xpath>/Defs/TerrainDef[defName="Owl_TanningVat"]</xpath>
+							<xpath>/Defs/ThingDef[defName="Owl_TanningVat"]</xpath>
 							<value>
 								<researchPrerequisites>
 									<li>VFET_Construction</li>

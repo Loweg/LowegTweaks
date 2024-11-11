@@ -30,6 +30,12 @@
 					</valuesPerLevel>
 				</value>
 			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="InsectJelly"]/statBases/FoodPoisonChanceFixedHuman</xpath>
+				<value>
+					<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>
