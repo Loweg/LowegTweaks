@@ -58,8 +58,7 @@
 				<xpath>/Defs/ThingDef[defName="Mech_Fabricor"]/race/mechEnabledWorkTypes/li[text()="Smithing"]</xpath>
 			</li>
 			<li Class="PatchOperationReplace">
-				<xpath>
-					/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li[text()="Smithing"]</xpath>
+				<xpath>/Defs/InspirationDef[defName="Inspired_Creativity"]/requiredAnyNonDisabledWorkType/li[text()="Smithing"]</xpath>
 				<value>
 					<li>Crafting</li>
 				</value>
@@ -244,7 +243,6 @@
 					<workType>Nurse</workType>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName="FeedPrisoner"]/workType</xpath>
 				<value>
@@ -257,6 +255,27 @@
 				<value>
 					<workType>Nurse</workType>
 				</value>
+			</li>
+
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/WorkGiverDef[defName="BottleFeedBaby"]/workType</xpath>
+				<value>
+					<workType>Nurse</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/WorkGiverDef[defName="BreastfeedBaby"]/workType</xpath>
+				<value>
+					<workType>Nurse</workType>
+				</value>
+			</li>
+			<!-- I forgot how to MayRequire more than one thing -->
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/WorkGiverDef[defName="washChild"]/workType</xpath>
+				<value>
+					<workType>Nurse</workType>
+				</value>
+				<success>Always</success>
 			</li>
 
 			<li Class="PatchOperationReplace">
@@ -351,6 +370,17 @@
 				<value>
 					<workType>Crafting</workType>
 				</value>
+			</li>
+
+			<!-- Rimefeller -->
+			<li Class="PatchOperationReplace" MayRequire="dubwise.rimefeller">
+				<xpath>/Defs/WorkGiverDef[defName="OperateResourceConsole"]/workType</xpath>
+				<value>
+					<workType>Labor</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove" MayRequire="dubwise.rimefeller">
+				<xpath>/Defs/WorkTypeDef[defName="RimefellerCrafting"]</xpath>
 			</li>
 		</operations>
 	</Operation>

@@ -20,6 +20,8 @@
 	<LowegTweakFloorAffordanceDesc>Changes some floor affordances so that they don't all require heavy terrain (for example, carpets and straw).</LowegTweakFloorAffordanceDesc>
 	<LowegTweakRelicDiversification>Relic Diversification</LowegTweakRelicDiversification>
 	<LowegTweakRelicDiversificationDesc>Makes it so that apparel and some other things can spawn as relics.</LowegTweakRelicDiversificationDesc>
+	<LowegTweakQualityRebalance>Quality rebalance</LowegTweakQualityRebalance>
+	<LowegTweakQualityRebalanceDesc>Rebalances the chance of generating quality items when crafting, constructing, etc. This makes higher skill matter more, and highly skilled pawns are more likely to make quality items. However, pawns with low skills are more likely to have poor quality results. The new algorithm has a bit less variance, and is much more similar to the Dwarf Fortress distributions. </LowegTweakQualityRebalanceDesc>
 	<!-- Mod Support -->
 	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>
 	<LowegTweakCapableSerketistDesc>Makes the Serketist role in Vanilla Memes Expanded capable of more labors.</LowegTweakCapableSerketistDesc>

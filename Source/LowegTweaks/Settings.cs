@@ -17,6 +17,7 @@ namespace LowegTweaks {
 		public bool food_poisoning = true;
 		public bool floor_affordance = true;
 		public bool relic_diversification = true;
+		public bool quality_rebalance = true;
 		// VE
 		public bool memes_capable_serketist = false;
 		public bool factions_tribal_research = false;
@@ -30,6 +31,7 @@ namespace LowegTweaks {
 			Scribe_Values.Look(ref food_poisoning, "food_poisoning", true);
 			Scribe_Values.Look(ref floor_affordance, "floor_affordance", true);
 			Scribe_Values.Look(ref relic_diversification, "relic_diversification", true);
+			Scribe_Values.Look(ref quality_rebalance, "quality_rebalance", true);
 
 			Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
 			Scribe_Values.Look(ref factions_tribal_research, "factions_tribal_research", false);
@@ -64,6 +66,8 @@ namespace LowegTweaks {
 				"LowegTweakFloorAffordance", ref floor_affordance);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakRelicDiversification", ref relic_diversification);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+					"LowegTweakQualityRebalance", ref quality_rebalance);
 
 			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;

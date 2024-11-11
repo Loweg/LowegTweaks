@@ -39,6 +39,14 @@ Default on.
 Makes it so that apparel and some other things can spawn as relics.
 
 Default on.
+### Quality Rebalance
+Rebalances the chance of generating quality items when crafting, constructing, etc.
+This makes higher skill matter more, and highly skilled pawns are more likely to make quality items. However, pawns with low skills are more likely to have poor quality results.
+The new algorithm has a bit less variance, and is much more similar to the Dwarf Fortress distributions.
+
+This probably breaks the Individuality perfectionist trait.
+
+Default on.
 ## Alpha Biomes
 ### Forsaken mood
 The forsaken crags biome gives a negative mood debuff to colonists due to the sun being blotted out. This currently negates that if they have the biotech gene for dark vision.

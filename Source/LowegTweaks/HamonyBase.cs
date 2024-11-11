@@ -101,5 +101,18 @@ namespace LowegTweaks {
 				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().worktype_shuffle;
 			}
 		}
+
+		// Quality rebalance
+		[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn))]
+		class QualityPatch {
+			[HarmonyPrefix]
+			public static bool Prefix(ref QualityCategory __result, int relevantSkillLevel, bool inspired) {
+				__result = QualityGenerator.GetQuality(relevantSkillLevel, inspired);
+				return false;
+			}
+			public static bool Prepare() {
+				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().quality_rebalance;
+			}
+		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace LowegTweaks {
@@ -28,6 +29,16 @@ namespace LowegTweaks {
 				return base.ApplyWorker(xml);
 			}
 			return true;
+		}
+	}
+	public class QualityGenerator {
+		public static QualityCategory GetQuality(int relevantSkillLevel, bool inspired) {
+			// Div by 0 safeguard
+			if (relevantSkillLevel < 0) return QualityCategory.Awful;
+			float centerX = 0.75f + (relevantSkillLevel * 0.17f);
+			int num = Mathf.Clamp((int)Rand.GaussianAsymmetric(centerX, 4f/(relevantSkillLevel + 4), 0.8f), 0, 5);
+			int quality_boost = inspired ? 2 : 0;
+			return (QualityCategory) Mathf.Min(num + quality_boost, 6);
 		}
 	}
 }
