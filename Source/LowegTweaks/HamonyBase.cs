@@ -10,6 +10,7 @@ using RimWorld.Planet;
 using Verse;
 
 using LowegTweaks.TemperatureOverhaul;
+using System;
 
 namespace LowegTweaks {
 	[StaticConstructorOnStartup]
@@ -103,7 +104,7 @@ namespace LowegTweaks {
 		}
 
 		// Quality rebalance
-		[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn))]
+		[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new Type[] { typeof(int), typeof(bool) })]
 		class QualityPatch {
 			[HarmonyPrefix]
 			public static bool Prefix(ref QualityCategory __result, int relevantSkillLevel, bool inspired) {
@@ -114,5 +115,14 @@ namespace LowegTweaks {
 				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().quality_rebalance;
 			}
 		}
-	}
+
+		// Not really sure what's causing exceptions on birth, maybe the new rimefeller patch but my tools are failing me so it's hard to tell.
+        [HarmonyPatch(typeof(Pawn_WorkSettings), nameof(Pawn_WorkSettings.SetPriority))]
+        class FixExceptionPatch {
+            [HarmonyPrefix]
+            public static bool Prefix(WorkTypeDef w) {
+				return w != null;
+            }
+        }
+    }
 }
