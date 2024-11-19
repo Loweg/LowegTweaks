@@ -382,6 +382,14 @@
 			<li Class="PatchOperationRemove" MayRequire="dubwise.rimefeller">
 				<xpath>/Defs/WorkTypeDef[defName="RimefellerCrafting"]</xpath>
 			</li>
+
+			<!-- Simple chains lumber -->
+			<li Class="PatchOperationReplace" MayRequire="owlchemist.simplechains.lumber">
+				<xpath>/Defs/WorkGiverDef[defName="DoBillsCutWood"]/workType</xpath>
+				<value>
+					<workType>Labor</workType>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>
