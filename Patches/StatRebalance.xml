@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<!-- TODO -->
+		<optionKey>drug_crafting</optionKey>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="MiningSpeed"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>1</weight>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<weight>0.2</weight>
+							<max>1</max>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+			<!-- This is more by touch than anything, as there's not much to see -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="DeepDrillingSpeed"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>1</weight>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+			<!-- It's more thinking than touching -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[@Name="IntellectualSkillBase"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Consciousness</capacity>
+							<weight>1</weight>
+							<max>1.5</max>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>0.5</weight>
+							<max>1.1</max>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+			<!-- Maybe shouldn't use sight at all, but maybe you don't aim the milk just right or miss a patch of wool -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="AnimalGatherSpeed"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>1</weight>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<weight>0.2</weight>
+							<max>1</max>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+			<!-- I've done this almost by smell alone -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="ForagedNutritionPerDay"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>0.5</weight>
+							<max>1</max>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<weight>0.5</weight>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+			<!-- Most things derived from this also use sight so double dipping is rude -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="GeneralLaborSpeed"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>1</weight>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StatDef[defName="SmoothingSpeed"]/capacityFactors</xpath>
+				<value>
+					<capacityFactors>
+						<li>
+							<capacity>Manipulation</capacity>
+							<weight>1</weight>
+						</li>
+					</capacityFactors>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
