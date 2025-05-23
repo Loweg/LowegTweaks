@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="LowegTweaks.PatchOperationSettings">
+		<optionKey>fancy_hats</optionKey>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef/equippedStatOffsets/SocialImpact</xpath>
+				<value><SocialImpact>0.20</SocialImpact></value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/MemeDef[defName="HumanPrimacy"]/requireOne</xpath>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

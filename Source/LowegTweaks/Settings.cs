@@ -12,12 +12,15 @@ namespace LowegTweaks {
 
 		// Vanilla
 		public bool temperature_overhaul = true;
+		public bool sensible_lessons = true;
 		public bool worktype_shuffle = false;
 		public bool drug_crafting = true;
 		public bool food_poisoning = true;
 		public bool floor_affordance = true;
 		public bool relic_diversification = true;
 		public bool quality_rebalance = true;
+		public bool blind_rebalance = true;
+		public bool fancy_hats = true;
 		// VE
 		public bool memes_capable_serketist = false;
 		public bool factions_tribal_research = false;
@@ -26,12 +29,15 @@ namespace LowegTweaks {
 
 		public override void ExposeData() {
 			Scribe_Values.Look(ref temperature_overhaul, "temperature_overhaul", true);
+			Scribe_Values.Look(ref sensible_lessons, "sensible_lessons", true);
 			Scribe_Values.Look(ref worktype_shuffle, "worktype_shuffle", false);
 			Scribe_Values.Look(ref drug_crafting, "drug_crafting", true);
 			Scribe_Values.Look(ref food_poisoning, "food_poisoning", true);
 			Scribe_Values.Look(ref floor_affordance, "floor_affordance", true);
 			Scribe_Values.Look(ref relic_diversification, "relic_diversification", true);
 			Scribe_Values.Look(ref quality_rebalance, "quality_rebalance", true);
+			Scribe_Values.Look(ref blind_rebalance, "blind_rebalance", true);
+			Scribe_Values.Look(ref fancy_hats, "fancy_hats", true);
 
 			Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
 			Scribe_Values.Look(ref factions_tribal_research, "factions_tribal_research", false);
@@ -57,6 +63,8 @@ namespace LowegTweaks {
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakTemperatureOverhaul", ref temperature_overhaul);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakSensibleLessons", ref sensible_lessons);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakWorkType", ref worktype_shuffle);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakDrugCrafting", ref drug_crafting);
@@ -67,7 +75,11 @@ namespace LowegTweaks {
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakRelicDiversification", ref relic_diversification);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
-					"LowegTweakQualityRebalance", ref quality_rebalance);
+				"LowegTweakQualityRebalance", ref quality_rebalance);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakBlindRebalance", ref blind_rebalance);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakFancyHats", ref fancy_hats);
 
 			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;

@@ -11,6 +11,7 @@ using Verse;
 
 using LowegTweaks.TemperatureOverhaul;
 using System;
+using System.Linq;
 
 namespace LowegTweaks {
 	[StaticConstructorOnStartup]
@@ -29,6 +30,51 @@ namespace LowegTweaks {
 				new StabilityInfo().FinalizeInit();
 			}
 			instance.PatchAll();
+		}
+
+		[HarmonyPatch(typeof(JobDriver_Lessongiving), "ChooseSkill")]
+		class LessonPickerPatch {
+			[HarmonyPrefix]
+			public static bool Prefix(JobDriver_Lessongiving __instance, ref SkillDef __result, Pawn student) {
+				List<SkillDef> pool = new List<SkillDef>();
+				foreach (SkillRecord skill in __instance.pawn.skills.skills) {
+					SkillRecord student_skill = student.skills.GetSkill(skill.def);
+					if (skill.PermanentlyDisabled || student_skill.PermanentlyDisabled) continue;
+					int toAdd = skill.Level;
+
+					if (student_skill.passion == Passion.Minor) {
+						toAdd *= 2;
+					} else if (student_skill.passion == Passion.Major) {
+						toAdd *= 3;
+					}
+
+					for (int i = 0; i < toAdd; i++) {
+						pool.Add(skill.def);
+					}
+				}
+				__result = pool.RandomElement();
+				return false;
+			}
+			public static bool Prepare() {
+				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().sensible_lessons;
+			}
+		}
+
+		[HarmonyPatch(typeof(SkillRecord), "Learn")]
+		class LearnDisabledSkillIfChildPatch {
+			[HarmonyTranspiler]
+			public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator) {
+				var codes = new List<CodeInstruction>(instructions);
+
+				yield return new CodeInstruction(OpCodes.Ldarg_0);
+				yield return new CodeInstruction(OpCodes.Call, typeof(ChildLearningUtility).GetMethod(nameof(ChildLearningUtility.ShouldSkipDisabledCheck)));
+				yield return new CodeInstruction(OpCodes.Brtrue_S, codes[2].operand);
+
+				for (var i = 0; i < codes.Count; i++)
+				{
+					yield return codes[i];
+				}
+			}
 		}
 
 		// Floor affordance
@@ -75,7 +121,7 @@ namespace LowegTweaks {
 		[HarmonyPatch(typeof(ThoughtWorker_GauranlenConnectionDesired), "ShouldHaveThought")]
 		class ThoughtGauranlenPatch {
 			[HarmonyTranspiler]
-			static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
+			public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 				var codes = new List<CodeInstruction>(instructions);
 
 				for (var i = 0; i < codes.Count; i++) {
@@ -117,12 +163,12 @@ namespace LowegTweaks {
 		}
 
 		// Not really sure what's causing exceptions on birth, maybe the new rimefeller patch but my tools are failing me so it's hard to tell.
-        [HarmonyPatch(typeof(Pawn_WorkSettings), nameof(Pawn_WorkSettings.SetPriority))]
-        class FixExceptionPatch {
-            [HarmonyPrefix]
-            public static bool Prefix(WorkTypeDef w) {
+		[HarmonyPatch(typeof(Pawn_WorkSettings), nameof(Pawn_WorkSettings.SetPriority))]
+		class FixExceptionPatch {
+			[HarmonyPrefix]
+			public static bool Prefix(WorkTypeDef w) {
 				return w != null;
-            }
-        }
-    }
+			}
+		}
+	}
 }

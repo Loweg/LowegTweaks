@@ -41,4 +41,9 @@ namespace LowegTweaks {
 			return (QualityCategory) Mathf.Min(num + quality_boost, 6);
 		}
 	}
+	public class ChildLearningUtility {
+		public static bool ShouldSkipDisabledCheck(SkillRecord skill) {
+			return skill.Pawn.needs != null && skill.Pawn.needs.learning != null;
+		}
+	}
 }

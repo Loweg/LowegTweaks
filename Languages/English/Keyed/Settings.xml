@@ -10,6 +10,9 @@
 	<!-- Vanilla -->
 	<LowegTweakTemperatureOverhaul>Temperature overhaul</LowegTweakTemperatureOverhaul>
 	<LowegTweakTemperatureOverhaulDesc>Replaces many game constants with dynamic values, such as how much the temperature varies between day and night. Also adds a new "Overall Temperature" slider on the world creation screen.</LowegTweakTemperatureOverhaulDesc>
+	<LowegTweakSensibleLessons>Sensible Lesson Skill Selection</LowegTweakSensibleLessons>
+	<LowegTweakSensibleLessonsDesc>When an adult teaches a lesson to a child, select the topic skill based on the teacher's expertise and the child's interest via a weighted random, rather than randomly from the top 4, which is essentially random because kids can only learn 4 skills to start anyway. Also removes that restriction because kids can learn about things they can't do yet (why can they learn about firing rocket launchers but not making toast?).</LowegTweakSensibleLessonsDesc>
+
 	<LowegTweakDrugCrafting>Drug crafting fix</LowegTweakDrugCrafting>
 	<LowegTweakDrugCraftingDesc>Fixes the drug crafting identity crisis. See readme.</LowegTweakDrugCraftingDesc>
 	<LowegTweakFoodPoisoning>Food poisoning rebalance</LowegTweakFoodPoisoning>
@@ -21,7 +24,12 @@
 	<LowegTweakRelicDiversification>Relic Diversification</LowegTweakRelicDiversification>
 	<LowegTweakRelicDiversificationDesc>Makes it so that apparel and some other things can spawn as relics.</LowegTweakRelicDiversificationDesc>
 	<LowegTweakQualityRebalance>Quality rebalance</LowegTweakQualityRebalance>
-	<LowegTweakQualityRebalanceDesc>Rebalances the chance of generating quality items when crafting, constructing, etc. This makes higher skill matter more, and highly skilled pawns are more likely to make quality items. However, pawns with low skills are more likely to have poor quality results. The new algorithm has a bit less variance, and is much more similar to the Dwarf Fortress distributions. </LowegTweakQualityRebalanceDesc>
+	<LowegTweakQualityRebalanceDesc>Rebalances the chance of generating quality items when crafting, constructing, etc. This makes higher skill matter more, and highly skilled pawns are more likely to make quality items. However, pawns with low skills are more likely to have poor quality results. The new algorithm has a bit less variance, and is much more similar to the Dwarf Fortress distributions.</LowegTweakQualityRebalanceDesc>
+	<LowegTweakBlindRebalance>Blind Workers</LowegTweakBlindRebalance>
+	<LowegTweakBlindRebalanceDesc>Make blindness matter less for some things (mining, deep drilling, researching, animal gather speed, foraging, and smoothing specifically, and general labor speed as well), as blind people aren't completely unemployable IRL.</LowegTweakBlindRebalanceDesc>
+	<LowegTweakFancyHats>Fancy Hats</LowegTweakFancyHats>
+	<LowegTweakFancyHatsDesc>All fancy hats are equally fancy (all social impact boosts are .2), so if you want your leader to be a cowboy they don't miss out on .1 of social impact.</LowegTweakFancyHatsDesc>
+
 	<!-- Mod Support -->
 	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>
 	<LowegTweakCapableSerketistDesc>Makes the Serketist role in Vanilla Memes Expanded capable of more labors.</LowegTweakCapableSerketistDesc>

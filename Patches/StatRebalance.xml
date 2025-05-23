@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<Operation Class="LowegTweaks.PatchOperationSettings">
-		<!-- TODO -->
-		<optionKey>drug_crafting</optionKey>
+		<optionKey>blind_rebalance</optionKey>
 		<operations>
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/StatDef[defName="MiningSpeed"]/capacityFactors</xpath>
