@@ -269,8 +269,8 @@
 					<workType>Nurse</workType>
 				</value>
 			</li>
-			<!-- I forgot how to MayRequire more than one thing -->
-			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+			<!-- I forgot how to MayRequire more than one thing, but this is biotech also -->
+			<li Class="PatchOperationReplace" MayRequire="Dubwise.DubsBadHygiene">
 				<xpath>/Defs/WorkGiverDef[defName="washChild"]/workType</xpath>
 				<value>
 					<workType>Nurse</workType>

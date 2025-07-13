@@ -48,16 +48,16 @@ This probably breaks the Individuality perfectionist trait.
 
 Default on.
 ## Alpha Biomes
-### Forsaken mood
+### Forsaken mood (old)
 The forsaken crags biome gives a negative mood debuff to colonists due to the sun being blotted out. This currently negates that if they have the biotech gene for dark vision.
 
-Default off. Do not turn on unless you have Alpha Biomes loaded.
+Default off. Do not turn on unless you have Alpha Biomes loaded. Hasn't been tested in a long time.
 
 ## Vanilla Expanded
-### Capable Serketist
+### Capable Serketist (old)
 Increases the amount of permitted labors for the VME Serketist.
 
-Default off. Do not turn on unless you have Vanilla Ideology Expanded - Memes and Structures loaded.
+Default off. Do not turn on unless you have Vanilla Ideology Expanded - Memes and Structures loaded. Hasn't been tested in a long time.
 
 ### Tribals Research Patch
 Adds mod compatibility and patches to require Vanilla Factions Expanded = Tribals researches for some modded buildings and recipes, and fixes the smooth stone designation bug. Patches Cooking and Agriculture, CE, Colony Manager, Deep Storage, Rimefeller, and Dubs Bad Hygiene
