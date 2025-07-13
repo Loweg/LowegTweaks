@@ -12,7 +12,6 @@
 	<LowegTweakTemperatureOverhaulDesc>Replaces many game constants with dynamic values, such as how much the temperature varies between day and night. Also adds a new "Overall Temperature" slider on the world creation screen.</LowegTweakTemperatureOverhaulDesc>
 	<LowegTweakSensibleLessons>Sensible Lesson Skill Selection</LowegTweakSensibleLessons>
 	<LowegTweakSensibleLessonsDesc>When an adult teaches a lesson to a child, select the topic skill based on the teacher's expertise and the child's interest via a weighted random, rather than randomly from the top 4, which is essentially random because kids can only learn 4 skills to start anyway. Also removes that restriction because kids can learn about things they can't do yet (why can they learn about firing rocket launchers but not making toast?).</LowegTweakSensibleLessonsDesc>
-
 	<LowegTweakDrugCrafting>Drug crafting fix</LowegTweakDrugCrafting>
 	<LowegTweakDrugCraftingDesc>Fixes the drug crafting identity crisis. See readme.</LowegTweakDrugCraftingDesc>
 	<LowegTweakFoodPoisoning>Food poisoning rebalance</LowegTweakFoodPoisoning>
@@ -29,6 +28,9 @@
 	<LowegTweakBlindRebalanceDesc>Make blindness matter less for some things (mining, deep drilling, researching, animal gather speed, foraging, and smoothing specifically, and general labor speed as well), as blind people aren't completely unemployable IRL.</LowegTweakBlindRebalanceDesc>
 	<LowegTweakFancyHats>Fancy Hats</LowegTweakFancyHats>
 	<LowegTweakFancyHatsDesc>All fancy hats are equally fancy (all social impact boosts are .2), so if you want your leader to be a cowboy they don't miss out on .1 of social impact.</LowegTweakFancyHatsDesc>
+	<LowegTweakDisableEvents>Disable Bullshit Events</LowegTweakDisableEvents>
+	<LowegTweakDisableEventsDesc>Disable crop blight and short circuit.</LowegTweakDisableEventsDesc>
+
 
 	<!-- Mod Support -->
 	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>

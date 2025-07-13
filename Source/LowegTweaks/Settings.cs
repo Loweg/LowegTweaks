@@ -21,6 +21,7 @@ namespace LowegTweaks {
 		public bool quality_rebalance = true;
 		public bool blind_rebalance = true;
 		public bool fancy_hats = true;
+		public bool disable_events = true;
 		// VE
 		public bool memes_capable_serketist = false;
 		public bool factions_tribal_research = false;
@@ -38,8 +39,10 @@ namespace LowegTweaks {
 			Scribe_Values.Look(ref quality_rebalance, "quality_rebalance", true);
 			Scribe_Values.Look(ref blind_rebalance, "blind_rebalance", true);
 			Scribe_Values.Look(ref fancy_hats, "fancy_hats", true);
+            Scribe_Values.Look(ref disable_events, "disable_events", true);
 
-			Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
+
+            Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
 			Scribe_Values.Look(ref factions_tribal_research, "factions_tribal_research", false);
 
 			Scribe_Values.Look(ref forsaken_dark_mood, "forsaken_dark_mood", false);
@@ -80,8 +83,10 @@ namespace LowegTweaks {
 				"LowegTweakBlindRebalance", ref blind_rebalance);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakFancyHats", ref fancy_hats);
+            MakeBoolButton(ref curY, rectThatHasEverything.width,
+                "LowegTweakDisableEvents", ref fancy_hats);
 
-			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
+            Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;
 
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
