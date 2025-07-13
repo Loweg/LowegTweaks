@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<MemeDef>
+		<defName>Craftsmanship</defName>
+		<label>craftsmanship</label>
+		<description>Creation is the greatest virtue. To add is better than to subtract.</description>
+		<iconPath>UI/Memes/Craftsmanship</iconPath>
+		<groupDef>Misc</groupDef>
+		<impact>3</impact>
+		<requireOne>
+			<li>
+				<li>AnimalSlaughter_Prohibited</li>
+				<li>AnimalSlaughter_Horrible</li>
+				<li>AnimalSlaughter_Disapproved</li>
+			</li>
+			<li>
+				<li>KillingInnocentAnimals_Abhorrent</li>
+				<li>KillingInnocentAnimals_Horrible</li>
+				<li>KillingInnocentAnimals_Disapproved</li>
+			</li>
+			<li>
+				<li>MeatEating_Abhorrent</li>
+				<li>MeatEating_Horrible</li>
+				<li>MeatEating_Disapproved</li>
+			</li>
+			<li>
+				<li>OrganUse_HorribleSellOK</li>
+				<li>OrganUse_HorribleNoSell</li>
+				<li>OrganUse_Abhorrent</li>
+			</li>
+			<li>
+				<li>Execution_Abhorrent</li>
+			</li>
+		</requireOne>
+		<exclusionTags>
+			<li>CraftsmanshipHumanPrimacy</li>
+			<li>CraftsmanshipSupremacist</li>
+			<li>CraftsmanshipRaider</li>
+		</exclusionTags>
+		<generalRules>
+			<rulesStrings>
+				<li>memeAdjective->industrious</li>
+				<li>memeAdjective->constructive</li>
+				<li>memeAdjective->nonviolent</li>
+				<li>memeAdjective->creative</li>
+				<li>memeConcept->craft</li>
+				<li>memeConcept->creation</li>
+				<li>memeLeaderNoun->creator</li>
+				<li>memeLeaderNoun->maker</li>
+			</rulesStrings>
+		</generalRules>
+		<descriptionMaker>
+			<rules>
+				<rulesStrings>
+					<!-- theist myth -->
+					<li>creation(tag=meme_Craftsmanship)        ->[deity0_name] created all of nature, and gave it to man as a gift.</li>
+					<li>episode(uses=1,tag=meme_Craftsmanship)  ->The people fought with the beasts of the forest, and [deity0_name] cast them from [deity0_possessive] kingdom.</li>
+					<!-- theist founder -->
+					<li>intro(tag=meme_Craftsmanship)           ->(Craftsmanship Intro)</li>
+					<li>conflict(tag=meme_Craftsmanship)        ->(Craftsmanship Conflict)</li>
+					<li>founderJoin(tag=meme_Craftsmanship)     ->(Craftsmanship Founder Join)</li>
+					<li>victory(tag=meme_Craftsmanship)         ->(Craftsmanship Victory)</li>
+					<!-- ideological founder -->
+					<li>setup(tag=meme_Craftsmanship)           ->[founderName] built a colony on a green world, and created great works.</li>
+					<li>story(uses=1,tag=meme_Craftsmanship)    ->Once, [founderName] saw a man kick a dog. [founder_pronoun] ordered the man killed on the spot.</li>
+					<!-- ideological lesson -->
+					<li>lessonIntro(tag=meme_Craftsmanship)         ->I visited a well-run farm full of healthy animals and thriving crops. It was obvious that</li>
+					<li>lesson(tag=meme_Craftsmanship)              ->living free of violence leads to prosperity</li>
+					<li>lessonReinforcement(tag=meme_Craftsmanship) ->(Craftsmanship Lesson Reinforcement)</li>
+					<!-- archist -->
+					<li>archistBasis(tag=meme_Craftsmanship)    ->Archotechs are machines of vast will and power, but only humanity could create them.</li>
+					<li>archistFact(tag=meme_Craftsmanship)     ->Humans are the device-makers, and the archotechs are their devices.</li>
+					<li>archistProphecy(tag=meme_Craftsmanship) ->[inTheEnd], by observing humanity, the archotechs will finally understand their purpose, and lift confident humanity up to rule them.</li>
+					<!-- animist -->
+					<li>animistFact(tag=meme_Craftsmanship)     ->Nature's animals should not be harmed.</li>
+				</rulesStrings>
+			</rules>
+		</descriptionMaker>
+		<symbolPacks>
+			<li>
+				<ideoName>Craftsmanship</ideoName>
+				<theme>craft</theme>
+				<adjective>creative</adjective>
+				<member>crafter</member>
+			</li>
+		</symbolPacks>
+	</MemeDef>
+</Defs>
