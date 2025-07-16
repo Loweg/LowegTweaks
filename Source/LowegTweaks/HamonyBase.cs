@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
-using System.Reflection.Emit;
-
-using HarmonyLib;
-using UnityEngine;
-
+﻿using HarmonyLib;
+using LowegTweaks.TemperatureOverhaul;
 using RimWorld;
 using RimWorld.Planet;
-using Verse;
-
-using LowegTweaks.TemperatureOverhaul;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using UnityEngine;
+using Verse;
+using Verse.AI;
 
 namespace LowegTweaks {
 	[StaticConstructorOnStartup]
@@ -130,6 +128,44 @@ namespace LowegTweaks {
 					} else {
 						yield return codes[i];
 					}
+				}
+			}
+			public static bool Prepare() {
+				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().worktype_shuffle;
+			}
+		}
+
+		[HarmonyPatch(typeof(Plant), nameof(Plant.TrySpawnStump))]
+		class StumpChopPatch {
+			[HarmonyPostfix]
+			public static void Postfix(ref Thing __result, Plant __instance) {
+				if (__result == null || __instance.Map == null) {
+					return;
+				}
+				Map map = __instance.Map;
+				IntVec3 position = __result.Position;
+				Pawn pawn = null;
+				foreach (IntVec3 item in GenRadial.RadialCellsAround(position, 2f, useCenter: true)) {
+					if (!item.InBounds(map)) {
+						continue;
+					}
+					List<Thing> list = map.thingGrid.ThingsListAt(item);
+					for (int j = 0; j < list.Count; j++) {
+						if (list[j] is Pawn pawn2 && pawn2.Dead == false && (pawn2.Faction == Faction.OfPlayer || pawn2.IsColonist || pawn2.IsPrisonerOfColony || pawn2.IsSlaveOfColony) && pawn2.workSettings != null && pawn2.workSettings.EverWork && pawn2.workSettings.WorkIsActive(WorkTypeDefOf.Growing)) {
+							pawn = pawn2;
+							break;
+						}
+					}
+					if (pawn == null) {
+						continue;
+					}
+					break;
+				}
+				if (__result.def.defName.StartsWith("Chop")) {
+					Designation newDes = new Designation(__result, DesignationDefOf.HarvestPlant);
+					map.designationManager.AddDesignation(newDes);
+					Job job = JobMaker.MakeJob(JobDefOf.CutPlant, __result);
+					pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
 				}
 			}
 			public static bool Prepare() {
