@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 
@@ -83,10 +83,10 @@ namespace LowegTweaks {
 				"LowegTweakBlindRebalance", ref blind_rebalance);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakFancyHats", ref fancy_hats);
-            MakeBoolButton(ref curY, rectThatHasEverything.width,
-                "LowegTweakDisableEvents", ref fancy_hats);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakDisableEvents", ref fancy_hats);
 
-            Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
+			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;
 
 			MakeBoolButton(ref curY, rectThatHasEverything.width,

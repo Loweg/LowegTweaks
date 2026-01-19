@@ -47,6 +47,24 @@ The new algorithm has a bit less variance, and is much more similar to the Dwarf
 This probably breaks the Individuality perfectionist trait.
 
 Default on.
+### Disable BS Events
+Disables crop blight and short circuit events.
+
+Default on.
+### Fancy hats
+Makes all hats equally fancy (+0.2 social impact to all hats that affect social impact).
+Now you can use cowboy hats without metagaming fomo.
+
+Default on.
+### Forgiving blindness
+Blindness is no longer the punishment of vanilla. Blind pawns are much more capable of labors such as crafting and deep drilling, and have reduced maluses for most tasks.
+
+Default off.
+## Ideology
+### Capable roles
+Makes some roles capable of more labors.
+
+Default off.
 ## Alpha Biomes
 ### Forsaken mood (old)
 The forsaken crags biome gives a negative mood debuff to colonists due to the sun being blotted out. This currently negates that if they have the biotech gene for dark vision.

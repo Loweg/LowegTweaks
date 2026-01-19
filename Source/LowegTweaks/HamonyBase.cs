@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using LowegTweaks.TemperatureOverhaul;
 using RimWorld;
 using RimWorld.Planet;
@@ -24,13 +24,33 @@ namespace LowegTweaks {
 		}
 
 		static HarmonyBase() {
+
 			if (LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().temperature_overhaul) {
 				new StabilityInfo().FinalizeInit();
 			}
+			Harmony.DEBUG = true;
 			instance.PatchAll();
 		}
 
-		[HarmonyPatch(typeof(JobDriver_Lessongiving), "ChooseSkill")]
+        [HarmonyPatch(typeof(IdeoManager), "ExposeData")]
+        class NomadicFixPatch {
+            [HarmonyPrefix]
+            public static bool Prefix(IdeoManager __instance) {
+				Scribe_Values.Look<int>(ref __instance.lastResettledTick, "lastResettledTick", GenTicks.TicksGame);
+				return true;
+            }
+        }
+
+		[HarmonyPatch(typeof(Building_OutfitStand), "BeautyOffset", MethodType.Getter)]
+		class PrettyOutfitStandPatch {
+			[HarmonyPrefix]
+			public static bool Prefix(float __result) {
+				__result = 0f;
+				return false;
+			}
+		}
+
+        [HarmonyPatch(typeof(JobDriver_Lessongiving), "ChooseSkill")]
 		class LessonPickerPatch {
 			[HarmonyPrefix]
 			public static bool Prefix(JobDriver_Lessongiving __instance, ref SkillDef __result, Pawn student) {
@@ -135,41 +155,59 @@ namespace LowegTweaks {
 			}
 		}
 
-		[HarmonyPatch(typeof(Plant), nameof(Plant.TrySpawnStump))]
-		class StumpChopPatch {
-			[HarmonyPostfix]
-			public static void Postfix(ref Thing __result, Plant __instance) {
-				if (__result == null || __instance.Map == null) {
-					return;
-				}
-				Map map = __instance.Map;
-				IntVec3 position = __result.Position;
-				Pawn pawn = null;
-				foreach (IntVec3 item in GenRadial.RadialCellsAround(position, 2f, useCenter: true)) {
-					if (!item.InBounds(map)) {
-						continue;
+        //[HarmonyPatch(typeof(Plant), nameof(Plant.TrySpawnStump))]
+        //class StumpChopPatch {
+        //	[HarmonyPostfix]
+        //	public static void Postfix(Plant __instance, Pawn by, PlantDestructionMode plantDestructionMode) {
+        //		Log.Message("Running stump chop patch");
+
+        //		if (__instance.Map == null) {
+        //			Log.Message("Map null");
+        //			return;
+        //		}
+
+        //		Log.Message("Things: " + __instance.Map.thingGrid.ThingsListAt(__instance.Position));
+        //		Log.Message("Def: " + __instance.def);
+
+        //		Thing stump = __instance.Map.thingGrid.ThingsListAt(__instance.Position).Find(thing =>
+        //			thing.def == __instance.def.plant.burnedThingDef ||
+        //			thing.def == __instance.def.plant.choppedThingDef ||
+        //			thing.def == __instance.def.plant.smashedThingDef
+        //		);
+        //		if ( stump == null ) return;
+
+        //		Designation newDes = new Designation(stump, DesignationDefOf.HarvestPlant);
+        //		__instance.Map.designationManager.AddDesignation(newDes);
+        //		Job job = JobMaker.MakeJob(JobDefOf.CutPlant, stump);
+        //		by.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+        //	}
+        //	public static bool Prepare() {
+        //		return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().worktype_shuffle;
+        //	}
+        //}
+
+        [HarmonyPatch(typeof(Plant), nameof(Plant.PlantCollected))]
+        class StumpChopPatch {
+			[HarmonyTranspiler]
+			public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator) {
+				var codes = new List<CodeInstruction>(instructions);
+				for (var i = 0; i < codes.Count; i++) {
+                    if (codes[i].opcode == OpCodes.Callvirt && (codes[i].operand as MethodInfo).Name == "Destroy") {
+                        yield return codes[i]; // Destroy
+						i++;
+                        yield return codes[i]; // ldloc.1 
+                        i++;
+                        yield return codes[i]; // brfalse
+                        i++;
+                        yield return codes[i]; // ldarg.2
+                        i++;
+						CodeInstruction code = codes[i];
+						code.opcode = OpCodes.Ldc_I4_2;
+						yield return code;
+                    } else {
+						yield return codes[i];
 					}
-					List<Thing> list = map.thingGrid.ThingsListAt(item);
-					for (int j = 0; j < list.Count; j++) {
-						if (list[j] is Pawn pawn2 && pawn2.Dead == false && (pawn2.Faction == Faction.OfPlayer || pawn2.IsColonist || pawn2.IsPrisonerOfColony || pawn2.IsSlaveOfColony) && pawn2.workSettings != null && pawn2.workSettings.EverWork && pawn2.workSettings.WorkIsActive(WorkTypeDefOf.Growing)) {
-							pawn = pawn2;
-							break;
-						}
-					}
-					if (pawn == null) {
-						continue;
-					}
-					break;
 				}
-				if (__result.def.defName.StartsWith("Chop")) {
-					Designation newDes = new Designation(__result, DesignationDefOf.HarvestPlant);
-					map.designationManager.AddDesignation(newDes);
-					Job job = JobMaker.MakeJob(JobDefOf.CutPlant, __result);
-					pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-				}
-			}
-			public static bool Prepare() {
-				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().worktype_shuffle;
 			}
 		}
 
