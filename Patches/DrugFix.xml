@@ -30,6 +30,10 @@
 					<description>The speed at which this person cooks drug products at a stove, such as beer and tea.</description>
 				</value>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="PsychiteTea"]/recipeMaker/recipeUsers</xpath>
+				<value><li>DrugLab</li></value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>

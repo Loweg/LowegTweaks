@@ -14,32 +14,13 @@ using Verse.AI;
 namespace LowegTweaks {
 	[StaticConstructorOnStartup]
 	public static class HarmonyBase {
-		private static Harmony harmony = null;
-		static internal Harmony instance {
-			get {
-				if (harmony == null)
-					harmony = new Harmony("LowegTweaks.Harmony");
-				return harmony;
-			}
-		}
-
 		static HarmonyBase() {
-
-			if (LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().temperature_overhaul) {
+			LowegTweaks mod = LoadedModManager.GetMod<LowegTweaks>();
+			if (mod.GetSettings<Settings>().temperature_overhaul) {
 				new StabilityInfo().FinalizeInit();
 			}
-			Harmony.DEBUG = true;
-			instance.PatchAll();
+			LowegTweaks.harmony.PatchAll();
 		}
-
-        [HarmonyPatch(typeof(IdeoManager), "ExposeData")]
-        class NomadicFixPatch {
-            [HarmonyPrefix]
-            public static bool Prefix(IdeoManager __instance) {
-				Scribe_Values.Look<int>(ref __instance.lastResettledTick, "lastResettledTick", GenTicks.TicksGame);
-				return true;
-            }
-        }
 
 		[HarmonyPatch(typeof(Building_OutfitStand), "BeautyOffset", MethodType.Getter)]
 		class PrettyOutfitStandPatch {
@@ -47,6 +28,9 @@ namespace LowegTweaks {
 			public static bool Prefix(float __result) {
 				__result = 0f;
 				return false;
+			}
+			public static bool Prepare() {
+				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().pretty_outfit_stand;
 			}
 		}
 
@@ -92,6 +76,9 @@ namespace LowegTweaks {
 				{
 					yield return codes[i];
 				}
+			}
+			public static bool Prepare() {
+				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().sensible_lessons;
 			}
 		}
 
@@ -155,37 +142,6 @@ namespace LowegTweaks {
 			}
 		}
 
-        //[HarmonyPatch(typeof(Plant), nameof(Plant.TrySpawnStump))]
-        //class StumpChopPatch {
-        //	[HarmonyPostfix]
-        //	public static void Postfix(Plant __instance, Pawn by, PlantDestructionMode plantDestructionMode) {
-        //		Log.Message("Running stump chop patch");
-
-        //		if (__instance.Map == null) {
-        //			Log.Message("Map null");
-        //			return;
-        //		}
-
-        //		Log.Message("Things: " + __instance.Map.thingGrid.ThingsListAt(__instance.Position));
-        //		Log.Message("Def: " + __instance.def);
-
-        //		Thing stump = __instance.Map.thingGrid.ThingsListAt(__instance.Position).Find(thing =>
-        //			thing.def == __instance.def.plant.burnedThingDef ||
-        //			thing.def == __instance.def.plant.choppedThingDef ||
-        //			thing.def == __instance.def.plant.smashedThingDef
-        //		);
-        //		if ( stump == null ) return;
-
-        //		Designation newDes = new Designation(stump, DesignationDefOf.HarvestPlant);
-        //		__instance.Map.designationManager.AddDesignation(newDes);
-        //		Job job = JobMaker.MakeJob(JobDefOf.CutPlant, stump);
-        //		by.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-        //	}
-        //	public static bool Prepare() {
-        //		return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().worktype_shuffle;
-        //	}
-        //}
-
         [HarmonyPatch(typeof(Plant), nameof(Plant.PlantCollected))]
         class StumpChopPatch {
 			[HarmonyTranspiler]
@@ -195,7 +151,7 @@ namespace LowegTweaks {
                     if (codes[i].opcode == OpCodes.Callvirt && (codes[i].operand as MethodInfo).Name == "Destroy") {
                         yield return codes[i]; // Destroy
 						i++;
-                        yield return codes[i]; // ldloc.1 
+                        yield return codes[i]; // ldloc.1
                         i++;
                         yield return codes[i]; // brfalse
                         i++;
@@ -208,6 +164,9 @@ namespace LowegTweaks {
 						yield return codes[i];
 					}
 				}
+			}
+			public static bool Prepare() {
+				return LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>().stump_chop;
 			}
 		}
 
@@ -244,5 +203,8 @@ namespace LowegTweaks {
 				return w != null;
 			}
 		}
+
+
 	}
 }
+

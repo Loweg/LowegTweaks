@@ -25,5 +25,8 @@
 		<li>Rah.RBSEHC</li>
 		<li>Rah.RBSE</li>
 	</loadAfter>
+	<loadBefore>
+		<li>arof.fluffy.worktab.continued</li>
+	</loadBefore>
 	<description>Tweaks drug crafting, work types, temperature, and more. Fully configurable. See the ReadMe for more info.</description>
 </ModMetaData>

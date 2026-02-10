@@ -1,11 +1,30 @@
+using HarmonyLib;
+using LudeonTK;
 using RimWorld;
+using System;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
 namespace LowegTweaks {
 	public class LowegTweaks : Mod {
+		public static Harmony harmony = null;
 		static LowegTweaks() {}
-		public LowegTweaks(ModContentPack content) : base(content) {}
+		public LowegTweaks(ModContentPack content) : base(content) {
+			harmony = new Harmony("loweg.lowegtweaks");
+			Settings settings = GetSettings<Settings>();
+			if (settings.temperature_overhaul) {
+				new TemperatureOverhaul.StabilityInfo().FinalizeInit();
+			}
+			if (settings.worktype_shuffle) {
+				harmony.Patch(AccessTools.Method(typeof(DefGenerator), nameof(DefGenerator.GenerateImpliedDefs_PreResolve)),
+					postfix: new HarmonyMethod(typeof(LowegTweaks), nameof(LowegTweaks.RemoveWorkTypesPatch)));
+			}
+		}
+		private static void RemoveWorkTypesPatch() {
+			PawnTableDef table = PawnTableDefOf.Work;
+			table.columns.RemoveAll(c => c.workType?.defName == "Smithing" || c.workType?.defName == "Tailoring" || c.workType?.defName == "PlantCutting");
+		}
 
 		public static void ApplySettings() {
 			var settings = LoadedModManager.GetMod<LowegTweaks>().GetSettings<Settings>();
@@ -44,6 +63,23 @@ namespace LowegTweaks {
 	public class ChildLearningUtility {
 		public static bool ShouldSkipDisabledCheck(SkillRecord skill) {
 			return skill.Pawn.needs != null && skill.Pawn.needs.learning != null;
+		}
+	}
+
+	public class LowegDebugTools {
+		[DebugAction("General", null, false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		private static DebugActionNode SetDurability() {
+			DebugActionNode debugActionNode = new DebugActionNode();
+			for (int i = 0; i <= 100; i+=10) {
+				int toSetPercent = Math.Max(1, i);
+				debugActionNode.AddChild(new DebugActionNode(toSetPercent.ToString() + "%", DebugActionType.ToolMap, delegate {
+					foreach (Thing thing in UI.MouseCell().GetThingList(Find.CurrentMap)) {
+						float hp = (toSetPercent * 0.01f) * (float)thing.MaxHitPoints;
+						thing.HitPoints = (int)hp;
+					}
+				}));
+			}
+			return debugActionNode;
 		}
 	}
 }

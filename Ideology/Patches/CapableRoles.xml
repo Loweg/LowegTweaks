@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<Operation Class="LowegTweaks.PatchOperationSettings">
-		<optionKey>floor_affordance</optionKey>
+		<optionKey>capable_roles</optionKey>
 		<operations>
 			<li Class="PatchOperationRemove">
 				<xpath>/Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]/roleDisabledWorkTags/li[text()="Crafting"]</xpath>
 			</li>
-		</operations>
-	</Operation>
-	<Operation Class="LowegTweaks.PatchOperationSettings">
-		<optionKey>floor_affordance</optionKey>
-		<operations>
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]/roleDisabledWorkTags</xpath>
-				<value><li>Cooking</li></value>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PreceptDef[defName="IdeoRole_AnimalsSpecialist"]/roleDisabledWorkTags/li[text()="Cooking"]</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PreceptDef[defName="IdeoRole_AnimalsSpecialist"]/roleDisabledWorkTags/li[text()="PlantWork"]</xpath>
 			</li>
 		</operations>
 	</Operation>

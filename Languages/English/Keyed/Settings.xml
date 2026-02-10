@@ -30,11 +30,10 @@
 	<LowegTweakFancyHatsDesc>All fancy hats are equally fancy (all social impact boosts are .2), so if you want your leader to be a cowboy they don't miss out on .1 of social impact.</LowegTweakFancyHatsDesc>
 	<LowegTweakDisableEvents>Disable Bullshit Events</LowegTweakDisableEvents>
 	<LowegTweakDisableEventsDesc>Disable crop blight and short circuit.</LowegTweakDisableEventsDesc>
-
+	<LowegTweakCapableRoles>Capable Roles</LowegTweakCapableRoles>
+	<LowegTweakCapableRolesDesc>Makes some ideology roles capable of more labors.</LowegTweakCapableRolesDesc>
 
 	<!-- Mod Support -->
-	<LowegTweakCapableSerketist>Capable Serketist</LowegTweakCapableSerketist>
-	<LowegTweakCapableSerketistDesc>Makes the Serketist role in Vanilla Memes Expanded capable of more labors.</LowegTweakCapableSerketistDesc>
 	<LowegTweakTribalResearch>Tribals Research Patches</LowegTweakTribalResearch>
 	<LowegTweakTribalResearchDesc>Adds mod compatibility and patches to require Vanilla Factions Expanded - Tribals researches for some modded buildings and recipes, and fixes the smooth stone designation bug. Patches Cooking and Agriculture, CE, Colony Manager, Deep Storage, Rimefeller, and Dubs Bad Hygiene.</LowegTweakTribalResearchDesc>
 	<LowegTweakForsakenDarkMood>Forsaken dark mood</LowegTweakForsakenDarkMood>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThoughtDef>
+    	<defName>WearingColor_Any</defName>
+    	<thoughtClass>Thought_Situational</thoughtClass>
+    	<workerClass>LowegTweaks.ThoughtWorker_WearingAnyColor</workerClass>
+    	<stages>
+    		<li>
+				<label>wearing favorite colors</label>
+    			<description>I like to wear these colors.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+    		</li>
+    	</stages>
+	</ThoughtDef>
+</Defs>
+

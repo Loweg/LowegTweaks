@@ -22,8 +22,10 @@ namespace LowegTweaks {
 		public bool blind_rebalance = true;
 		public bool fancy_hats = true;
 		public bool disable_events = true;
+		public bool capable_roles = true;
+		public bool pretty_outfit_stand = true;
+		public bool stump_chop = true;
 		// VE
-		public bool memes_capable_serketist = false;
 		public bool factions_tribal_research = false;
 		// Alpha Biomes
 		public bool forsaken_dark_mood = false;
@@ -40,9 +42,10 @@ namespace LowegTweaks {
 			Scribe_Values.Look(ref blind_rebalance, "blind_rebalance", true);
 			Scribe_Values.Look(ref fancy_hats, "fancy_hats", true);
             Scribe_Values.Look(ref disable_events, "disable_events", true);
+            Scribe_Values.Look(ref capable_roles, "capable_roles", true);
+            Scribe_Values.Look(ref pretty_outfit_stand, "pretty_outfit_stand", true);
+            Scribe_Values.Look(ref stump_chop, "stump_chop", true);
 
-
-            Scribe_Values.Look(ref memes_capable_serketist, "memes_capable_serketist", false);
 			Scribe_Values.Look(ref factions_tribal_research, "factions_tribal_research", false);
 
 			Scribe_Values.Look(ref forsaken_dark_mood, "forsaken_dark_mood", false);
@@ -85,12 +88,16 @@ namespace LowegTweaks {
 				"LowegTweakFancyHats", ref fancy_hats);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakDisableEvents", ref fancy_hats);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakCapableRoles", ref capable_roles);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakPrettyOutfitStand", ref pretty_outfit_stand);
+			MakeBoolButton(ref curY, rectThatHasEverything.width,
+				"LowegTweakStumpChop", ref stump_chop);
 
 			Widgets.DrawLineHorizontal(10, curY + 7, rectThatHasEverything.width - 10);
 			curY += 10;
 
-			MakeBoolButton(ref curY, rectThatHasEverything.width,
-				"LowegTweakCapableSerketist", ref memes_capable_serketist);
 			MakeBoolButton(ref curY, rectThatHasEverything.width,
 				"LowegTweakTribalResearch", ref factions_tribal_research);
 

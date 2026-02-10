@@ -24,6 +24,8 @@ Fixes the drug crafting identity crisis.
 
 In the vanilla game, drug crafting requires you to be capable of intellectual and crafting; uses a stove, crafting spot, campfire, or drug lab; and uses the intellectual or cooking skill. The way this is distributed is not necessarily intuitive (smokeleaf joint rolling uses cooking!). This tweak tries to fix this nightmare by making all drug crafting at a drug lab or crafting spot require intellectual and use the crafting skill, and all drug *cooking* at a stove or campfire (tea and wort) use the cooking skill.
 
+Also adds psychite tea brewing to the drug lab.
+
 Default on.
 ### Food poison rebalance
 Makes it so that expert cooks will no longer poison your colonists due to "insufficient skill". They can still make tainted meals due to a dirty cooking area.
@@ -44,8 +46,6 @@ Rebalances the chance of generating quality items when crafting, constructing, e
 This makes higher skill matter more, and highly skilled pawns are more likely to make quality items. However, pawns with low skills are more likely to have poor quality results.
 The new algorithm has a bit less variance, and is much more similar to the Dwarf Fortress distributions.
 
-This probably breaks the Individuality perfectionist trait.
-
 Default on.
 ### Disable BS Events
 Disables crop blight and short circuit events.
@@ -56,10 +56,16 @@ Makes all hats equally fancy (+0.2 social impact to all hats that affect social 
 Now you can use cowboy hats without metagaming fomo.
 
 Default on.
-### Forgiving blindness
+### Blind workers
 Blindness is no longer the punishment of vanilla. Blind pawns are much more capable of labors such as crafting and deep drilling, and have reduced maluses for most tasks.
 
 Default off.
+### Cave devilstrand
+Devilstrand is a mushroom, and should be able to grow without light. Adds a new varient of devilstrand that grows like other cave plants.
+### Craftsmanship meme
+WIP, doesn't fit, I like it.
+### Pretty outfit stand
+### Set durability debug tool
 ## Ideology
 ### Capable roles
 Makes some roles capable of more labors.
